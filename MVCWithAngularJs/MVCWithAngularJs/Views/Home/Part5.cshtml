@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Part5";
+}
+
+<h2>Part5 - Cascade Dropdown using AngularJS and MVC4</h2>
+
+<div ng-controller="Part5Controller">
+    Country : <select ng-model="CountryID" ng-options="I.CountryID as I.CountryName for I in CountryList" ng-change="GetState()">
+                <option value="">Select Country</option>
+              </select>
+    State : <select ng-model="StateID" ng-options="I.StateID as I.StateName for I in StateList">
+                <option value="">{{StateTextToShow}}</option>
+            </select>
+    <input type="button" value="Get Selected Values" ng-click="ShowResult()"/>
+    <div style="padding:10px; font-weight:bold; border:1px solid #f3f3f3">
+        {{Result}}
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/AngularController/Part5Controller.js"></script>
+}

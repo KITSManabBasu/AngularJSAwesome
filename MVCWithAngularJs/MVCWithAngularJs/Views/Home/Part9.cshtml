@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Part9";
+}
+<style>
+    ul.menu {
+        list-style:none;
+        padding:10px;
+        margin:0px;
+    }
+        ul.menu li {
+            float:left;
+            margin:1px;
+        }
+        ul.menu li a{
+            float:left;
+            background-color:#f3f3f3;
+            display:inline-block;
+            padding:5px 20px;
+            
+        }
+            ul.menu li a:hover {
+                background-color:#e4e4e4;
+            }
+</style>
+
+<h2>Part9 - Routing in angularJs</h2>
+<div>
+    <ul class="menu">
+        <li><a href="#!/home">Home</a></li>
+        <li><a href="#!/about">About</a></li>
+        <li><a href="#!/order/100">Order</a></li>
+        <li><a href="#!/invalid">Invalid Url</a></li>
+    </ul>
+</div>
+<div style="padding:0 10px; margin:10px; border:10px solid #f3f3f3; clear:both;">
+    <ng-view></ng-view>
+</div>
+@section Scripts{
+    <script src="~/Scripts/AngularController/Routing.js"></script>
+}

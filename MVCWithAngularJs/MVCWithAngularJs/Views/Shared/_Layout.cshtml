@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .menuUl {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+        }
+            .menuUl li {
+                float:left;
+                padding:3px;
+                margin-right:2px;
+                background-color:#f3f3f3;
+            }
+                .menuUl li a {
+                    display:block;
+                    line-height:30px;
+                    padding:0px 5px;
+                    color:#920f0f;
+                    text-decoration:none;
+                }
+                    .menuUl li a:hover {
+                        text-decoration:underline;
+                    }
+    </style>
+</head>
+    @* Here  ng-app="MyApp" is used for auto-bootstrap an AngularJS application. here ng-app="MyApp" means <body> element is the owner 
+    of AngularJS application*@
+
+
+<body ng-app="MyApp">
+     <ul class="menuUl">
+         <li><a href="#" style="color:black;"><b>Angular Example :</b></a></li>
+         <li>@Html.ActionLink("Part 1", "Index")</li>
+         <li>@Html.ActionLink("Part 2", "Part2")</li>
+         <li>@Html.ActionLink("Part 3", "Part3")</li>
+         <li>@Html.ActionLink("Part 4", "Part4")</li>
+         <li>@Html.ActionLink("Part 5", "Part5")</li>
+         <li>@Html.ActionLink("Part 6", "Part6")</li>
+         <li>@Html.ActionLink("Part 7", "Part7")</li>
+         <li>@Html.ActionLink("Part 8", "Part8")</li>
+         <li>@Html.ActionLink("Part 9", "Part9")</li>
+     </ul>
+    <div style="height:1px; clear:both;"></div>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @* Add Angular Library Here *@
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/MyApp.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Part4";
+}
+@* I will add some css for looks good *@
+<style>
+    .tableData {
+        border-left:solid 1px #D8C3C3;
+        border-top:solid 1px #D8C3C3;
+    }
+        .tableData tr {
+        }
+        .tableData td,.tableData th {
+            border-right:solid 1px #D8C3C3;
+            border-bottom:solid 1px #D8C3C3;
+            text-align:left;
+            padding:5px;
+        }
+        .tableData td {
+        }
+        .tableData th {
+            background-color:#FAFAFA;
+            padding:7px 5px;
+            border-bottom-color:#9C9C9C;
+        }
+    .odd {
+        background-color:#f3f3f3;
+    }
+    .even {
+        background-color:#ffffff;
+    }
+</style>
+<h2>Part4</h2>
+<div ng-controller="Part4Controller">
+    <table class="tableData" width="80%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Hire Date</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+        </tr>
+        <tr ng-repeat="e in Employees" ng-class-odd="'odd'" ng-class-even="'even'">
+            <td>{{e.EmployeeID}}</td>
+            <td>{{e.FirstName}} {{e.LastName}}</td>
+            <td>{{e.HireDate.slice(6, -2) | date: 'dd-MM-yyyy'}}</td> <!-- As this is a Date field, we have to format-->
+            <td>{{e.Address}}</td>
+            <td>{{e.City}}</td>
+            <td>{{e.PostalCode}}</td>
+        </tr>
+    </table>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/AngularController/Part4Controller.js"></script>
+}

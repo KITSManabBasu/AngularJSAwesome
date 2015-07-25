@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51510eaa771b42a98213cd45857813c4" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="MyDatabaseModel.Contact" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyDatabaseModel.User" Width="1.5" PointX="4.75" PointY="1" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Employee" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Country" Width="1.5" PointX="6.375" PointY="1.125" />
+        <EntityTypeShape EntityType="MyDatabaseModel.State" Width="1.5" PointX="8" PointY="1.125" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Customer" Width="1.5" PointX="10.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MyDatabaseModel.Order" Width="1.5" PointX="12.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MyDatabaseModel.UploadedFile" Width="1.5" PointX="4.25" PointY="9.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

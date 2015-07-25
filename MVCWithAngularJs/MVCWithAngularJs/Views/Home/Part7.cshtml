@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Part7";
+}
+
+<style>
+    /*Here I will add some css for looks good*/
+    .tabContainer {
+        max-height:400px;
+        overflow:auto;
+        width:80%;
+    }
+    .tableData {
+        border-left:solid 1px #D8C3C3;
+        border-top:solid 1px #D8C3C3;
+        width:100%;
+    }
+        .tableData tr {
+        }
+        .tableData td,.tableData th {
+            border-right:solid 1px #D8C3C3;
+            border-bottom:solid 1px #D8C3C3;
+            text-align:left;
+            padding:5px;
+        }
+        .tableData td {
+        }
+        .tableData th {
+            background-color:#FAFAFA;
+            padding:7px 5px;
+            border-bottom-color:#9C9C9C;
+        }
+    .odd {
+        background-color:#f3f3f3;
+    }
+    .even {
+        background-color:#ffffff;
+    }
+    
+    tr.sub {
+        display:none;
+    }
+    .CX {
+        width:35px;
+    }
+    .CX span {
+        font-family: fantasy;
+        font-size: 15px;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+    }
+</style>
+
+<h2>Part7 - Nested Tabuler Data using AngularJS</h2>
+<div ng-controller="Part7Controller">
+    <table class="tableData" border="0" cellspacing="0" cellpadding="0">
+       <thead>
+           <tr>
+               <th></th>
+               <th>Contact Name</th>
+               <th>Phone</th>
+               <th>Address</th>
+               <th>City</th>
+               <th>Postal Code</th>               
+           </tr>
+       </thead>
+        <tbody ng-repeat="O in Orders">
+            <tr ng-class-even="'even'" ng-class-odd="'odd'">
+                <td class="CX"><span>+</span></td>
+                <td>{{O.Customer.ContactName}}</td>
+                <td>{{O.Customer.Phone}}</td>
+                <td>{{O.Customer.Address}}</td>
+                <td>{{O.Customer.City}}</td>
+                <td>{{O.Customer.PostalCode}}</td>
+            </tr>
+            <tr class="sub">
+                <td></td>
+                <td colspan="5">
+                    <table class="tableData" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Shipped Date</th>
+                            <th>Ship Name</th>
+                            <th>Address</th>
+                            <th>Postal Code</th>
+                        </tr>
+                        <tr ng-repeat="a in O.Orders" ng-class-even="'even'" ng-class-odd="'odd'">
+                            <td>{{a.OrderID}}</td>
+                            <td>{{a.OrderDate.slice(6,-2) | date:'dd-MM-yyyy'}}</td>
+                            <td>{{a.ShippedDate.slice(6,-2) | date:'dd-MM-yyyy'}}</td>
+                            <td>{{a.ShipName}}</td>
+                            <td>{{a.ShipAddress}}</td>
+                            <td>{{a.ShipPostalCode}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/AngularController/Part7Controller.js"></script>
+    <script>
+        $(function () {
+            $('body').on('click', '.CX span', function () {
+                //When Click On + sign
+                if ($(this).text() == '+') {
+                    $(this).text('-');
+                }
+                else {
+                    $(this).text('+');
+                }
+                $(this).closest('tr') // row of + sign
+                .next('tr') // next row of + sign
+                .toggle(); // if show then hide else show
+
+            });
+        });
+    </script>
+}
+
